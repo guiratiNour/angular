@@ -1,0 +1,36 @@
+<div class="container">
+
+    <div class="col-sm-4 col-md-4 col-lg-4 mb-4"> 
+        <label>Albums </label> 
+        <select class="form-control form-control-lg"   id="idCat" name="idCat"
+         [(ngModel)]="IdAlbum" (change)="onChange()">
+          <option *ngFor="let cat of albums" value="{{cat.idalbum}}">
+               {{cat.nom}} 
+         </option>
+    </select> 
+   </div>
+
+
+   
+
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr> <th>Id</th><th>Nom</th>  <th>Date Création</th><th>Album</th> </tr>
+                </thead>
+                <tbody *ngFor="let produit of chansons">
+                    <tr>
+                        <td>{{produit.idChanson}}</td>
+                        <td>{{produit.nom}}</td>
+                      
+                        <td>{{produit.dateCreation | date:'dd/MM/yyyy'}}</td>
+                        <td>{{produit.album.nom}}</td> 
+                       <!--  <td><a class="btn btn-danger" (click)="supprimerProduit(produit)">Supprimer</a></td>
+                        <td><a class="btn btn-success" [routerLink]="['/updateProduit',produit.idProduit]">Modifier</a></td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

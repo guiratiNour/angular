@@ -1,0 +1,32 @@
+<div class="container">
+    <div>
+        <h2>Ajouter un Chanson :</h2>
+    </div>
+    <form>
+        <div hidden class="col-sm-2 col-md-2 col-lg-2">
+            <label>ID Chanson</label>
+            <input type="text" [(ngModel)]="newChanson.idChanson" name="idChanson" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom Chanson</label>
+            <input type="text" [(ngModel)]="newChanson.nom" name="nom" class="form-control">
+        </div>
+       
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Date création</label>
+            <input type="date" [(ngModel)]="newChanson.dateCreation" name="dateCreation" class="form-control">
+        </div>
+
+         <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Album</label>
+            <select class="form-control form-control-lg" id="idalbum" name="idalbum" [(ngModel)]="newIdAlbum">
+                <option *ngFor="let cat of albums" [value]="cat.idalbum">
+                    {{cat.idalbum}}
+                </option>
+            </select>
+        </div> 
+        <div class="mt-2">
+            <button type="submit" (click)="addChanson()" class="btn btn-success">Ajouter</button>
+        </div>
+    </form>
+</div>
